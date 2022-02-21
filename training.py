@@ -13,7 +13,7 @@ model_path = os.path.join(config['output_model_path'], "trainedmodel.pkl")
 
 
 #################Function for training the model
-def train_model():
+def train_model(X, y):
     
     #use this logistic regression for training
     clf = LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
@@ -23,10 +23,11 @@ def train_model():
                     warm_start=False)
     
     #fit the logistic regression to your data
-    X, y = utils.load_data(dataset_csv_path)
-    clf.fit(X, y)
     #write the trained model to your workspace in a file called trainedmodel.pkl
-    pickle.dump(clf, open(model_path, "wb"))
-
+    clf.fit(X, y)
+    return clf
+    
 if __name__ == "__main__":
-    train_model()
+    X, y = utils.load_data(dataset_csv_path)
+    clf = train_model(X, y)
+    pickle.dump(clf, open(model_path, "wb"))

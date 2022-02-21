@@ -30,7 +30,7 @@ if __name__ == "__main__":
     with open("config.json", "r") as f:
         config = json.load(f)
         
-    output_model_path = os.path.join(config.get('output_model_path'), 'apireturns.txt')
+    output_model_path = os.path.join(config.get('output_model_path'), 'apireturns2.txt')
     with open(output_model_path, "w") as f:
         f.write(str(responses))
 

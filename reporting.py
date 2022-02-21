@@ -10,7 +10,7 @@ with open('config.json','r') as f:
 
 dataset_csv_path = os.path.join(config['test_data_path'], "testdata.csv") 
 model_path = os.path.join(config["prod_deployment_path"], "trainedmodel.pkl")
-confusion_matrix_path = os.path.join(config["prod_deployment_path"], 'confusionmatrix.png')
+confusion_matrix_path = os.path.join(config["prod_deployment_path"], 'confusionmatrix2.png')
 
 
 ##############Function for reporting
